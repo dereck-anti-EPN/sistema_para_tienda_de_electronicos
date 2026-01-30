@@ -1,4 +1,4 @@
-                                                               SISTEMA DE GESTION PARA TIENDA DE ELECTRONICOS
+                                              SISTEMA DE GESTION PARA TIENDA DE ELECTRONICOS
 
 Este es un programa echo con python que sirve como caja registradora para una tienda de electronicos, usted puede: registrar, mostrar y eliminar un pedido. 
 Este programa tiene un menu simple: 
