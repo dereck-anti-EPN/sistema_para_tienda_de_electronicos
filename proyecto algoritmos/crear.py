@@ -44,6 +44,32 @@ def registrar():
     entry_telefono.delete(0, tk.END)
     entry_direccion.delete(0, tk.END)
 
+#-----------------------------------------------------------------
+#leer datos
+
+def mostrar_pedidos():
+    if len(mostrarLista[0]) == 0:
+        messagebox.showinfo("Pedidos", "No existen pedidos registrados")
+        return
+
+    texto = ""
+
+    for i in range(len(mostrarLista[0])):
+        texto += f"""
+Pedido #{i + 1}
+Código: {mostrarLista[6][i]}
+Nombre: {mostrarLista[0][i]} {mostrarLista[1][i]}
+Teléfono: {mostrarLista[2][i]}
+Dirección: {mostrarLista[3][i]}
+Total sin IVA: ${mostrarLista[4][i]}
+Total con IVA: ${mostrarLista[5][i]:.2f}
+------------------------------
+"""
+
+    messagebox.showinfo("Lista de pedidos", texto)
+#---------------------------------------------------------
+
+
 ventana = tk.Tk() #ventana principal
 ventana.title("Caja Registradora - Crear")  #titulo de la ventana
 ventana.geometry("400x400") #medidas de la ventana... la vida es puro sufrimiento
@@ -93,5 +119,14 @@ tk.Button(
     fg="white"
 ).pack(pady=10) #el pady es para que haya espacio verticalmente, 10 pixeles en este caso
 
+tk.Button(
+    ventana,
+    text="Mostrar pedidos",
+    command=mostrar_pedidos,
+    bg="blue",
+    fg="white"
+).pack(pady=10)
+
 #hace que la ventana se mantenga abierta, sin esto la ventana se abre y se cierra de una
+
 ventana.mainloop()
